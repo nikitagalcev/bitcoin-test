@@ -1,0 +1,27 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:#2f3770;
+  color: #8f94b4;
+  text-transform: uppercase;
+}
+
+.logo {
+  margin-left: 25px;
+  display: flex;
+  font-size: 10px;
+}
+
+.logo__image {
+  margin-right: 10px;
+}
+
+.infoBlock {
+  margin-right: 30px;
+}
+
+.infoBlock_text:first {
+  margin-bottom: 0;
+}

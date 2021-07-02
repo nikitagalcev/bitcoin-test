@@ -1,0 +1,16 @@
+.pageLink {
+  margin-bottom: 10px;
+}
+
+.pageLink:hover {
+  cursor: pointer;
+}
+
+.pageLink__icon {
+  margin-right: 10px;
+}
+
+.pageLink__link {
+  text-decoration: none;
+  color: #8f94b4;
+}

@@ -1,0 +1,14 @@
+.historyPanel {
+  width: 270px;
+  height: calc(100vh - 84px);
+  position: absolute;
+  right: 0;
+  background-color:#CFCFCF;
+  color: #acb1cc;
+  text-transform: uppercase;
+}
+
+.historyList {
+  padding: 0;
+  list-style: none;
+}

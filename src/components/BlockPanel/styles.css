@@ -1,0 +1,18 @@
+.blockPanel {
+  position: absolute;
+  left: 0;
+  margin-top: -16px;
+  background-color:#2f3770;
+  color: #8f94b4;
+  text-transform: uppercase;
+  height: calc(100vh - 68px);
+  width: 270px;
+}
+
+.blockPanel__navigation {
+  padding-top: 20px;
+}
+
+.blockPanel__list {
+  list-style: none;
+}
