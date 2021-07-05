@@ -1,6 +1,6 @@
 import icon from '../../assets/icon.svg';
+import { Link } from 'react-router-dom';
 import './styles.css';
-import { Link } from 'react-router-dom'
 
 interface PageLinkProps {
   pageName: string,

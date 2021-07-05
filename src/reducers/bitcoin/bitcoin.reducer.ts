@@ -10,7 +10,7 @@ const INITIAL_STATE: BitcoinState = {
   btcConvertToUSD: 33608,
 }
 
-const bitcoinReducer = (state = INITIAL_STATE, action: any): BitcoinState => {
+const bitcoinReducer = (state = INITIAL_STATE, action: {type: string}): BitcoinState => {
   switch (action.type) {
     case INCREMENT_BITCOIN_PRICE:
       return {

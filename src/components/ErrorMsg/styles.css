@@ -1,0 +1,13 @@
+.error-wrapper {
+  padding: 10px;
+  text-align: center;
+  border: 2px solid #2f3770;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 100px;
+  left: 40%;
+}
+
+.error-message {
+  color: #d62020;
+}

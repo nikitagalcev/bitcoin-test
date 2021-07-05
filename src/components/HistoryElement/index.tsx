@@ -2,14 +2,14 @@ import './styles.css';
 
 interface HistoryElementProps {
   date: string,
-  info: string,
+  event: string,
 }
 
-export const HistoryElement: React.FC<HistoryElementProps> = ({date, info}) => {
+export const HistoryElement: React.FC<HistoryElementProps> = ({date, event}) => {
   return (
     <li className='historyElement'>
       <p className='historyElement__date'>{date}</p>
-      <p className='historyElement__info'>{info}</p>
+      <p className='historyElement__info'>{event}</p>
     </li>
   );
 };
