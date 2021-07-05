@@ -6,17 +6,13 @@ import './styles.css';
 
 export const Buy: React.FC = () => {
   const dispatch = useDispatch();
-  const { bitcoinPrice, userUsdBalance } = useSelector((state: RootState) => {
-    return {
-      bitcoinPrice: state.bitcoin.btcPrice,
-      userUsdBalance: state.user.usdBalance,
-    }
-  });
+  const { btcPrice } = useSelector((state: RootState) => state.bitcoin);
+  const { usdBalance } = useSelector((state: RootState) => state.user);
 
-  const handleBuyBtcClick = ():void => {
-    userUsdBalance - bitcoinPrice > 0 ? 
+  const handleBuyBtcClick = () => {
+    usdBalance - btcPrice > 0 ? 
     dispatch(userBuyBtc({
-      bitcoinPrice,
+      btcPrice,
       historyObj: {
         date: getCurrentDate(),
         event: 'Purchased 1 Bitcoin',
@@ -27,10 +23,10 @@ export const Buy: React.FC = () => {
 
   return (
     <main className='content'>
-      <h2 className='content__title'>Bitcoin price is {bitcoinPrice}$</h2>
+      <h2 className='content__title'>Bitcoin price is {btcPrice}$</h2>
       <p className='content__text'>
         {
-          bitcoinPrice >= 10000 ? 
+          btcPrice >= 10000 ? 
           'Prices are high, are you sure that you want to buy?' 
           : 'Prices are low, buy now!'
         }

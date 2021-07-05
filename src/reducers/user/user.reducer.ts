@@ -59,7 +59,7 @@ const userReducer = (state = INITIAL_STATE, action: UserActionTypes): UserState 
     case USER_BUY_BTC:
       return {
         ...state,
-        usdBalance: state.usdBalance - action.payload.bitcoinPrice,
+        usdBalance: state.usdBalance - action.payload.btcPrice,
         bitcoinBalance: state.bitcoinBalance += 1,
         actionsHistory: [
           action.payload.historyObj,
@@ -68,7 +68,7 @@ const userReducer = (state = INITIAL_STATE, action: UserActionTypes): UserState 
       case USER_SELL_BTC:
         return {
           ...state,
-          usdBalance: state.usdBalance + action.payload.bitcoinPrice,
+          usdBalance: state.usdBalance + action.payload.btcPrice,
           bitcoinBalance: state.bitcoinBalance -= 1,
           actionsHistory: [
             action.payload.historyObj,

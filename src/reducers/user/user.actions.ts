@@ -10,7 +10,7 @@ import {
 } from './user.types';
 
 interface UserSellBuyBtc {
-  bitcoinPrice: number,
+  btcPrice: number,
   historyObj: historyObjType;
 }
 

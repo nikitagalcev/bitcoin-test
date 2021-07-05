@@ -32,7 +32,7 @@ export interface userWithdrawUsdBalanceAction {
 export interface userBuyBtcAction {
   type: typeof USER_BUY_BTC;
   payload: {
-    bitcoinPrice: number,
+    btcPrice: number,
     historyObj: historyObjType
   }
 }
@@ -40,7 +40,7 @@ export interface userBuyBtcAction {
 export interface userSellBtcAction {
   type: typeof USER_SELL_BTC;
   payload: {
-    bitcoinPrice: number,
+    btcPrice: number,
     historyObj: historyObjType
   }
 }

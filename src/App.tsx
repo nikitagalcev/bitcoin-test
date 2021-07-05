@@ -1,14 +1,12 @@
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Header } from './components/Header';
 import { BlockPanel } from './components/BlockPanel';
 import { HistoryPanel } from './components/HistoryPanel';
 import { ErrorMsg } from './components/ErrorMsg';
-import { Wallet } from './pages/Wallet';
-import { Buy } from './pages/Buy';
-import { Sell } from './pages/Sell';
-import { Bitcoin } from './pages/Bitcoin';
+import { routes } from './constants/routes';
 import store from './store';
+
 
 function App() {
   return (
@@ -20,21 +18,7 @@ function App() {
         <ErrorMsg/>
 
         <Switch>
-          <Route exact path="/">
-            <Redirect to="/wallet" />
-          </Route>
-          <Route path="/wallet">
-            <Wallet/>
-          </Route>
-          <Route path="/buy">
-            <Buy/>
-          </Route>
-          <Route path="/sell">
-            <Sell/>
-          </Route>
-          <Route path="/bitcoin">
-            <Bitcoin/>
-          </Route>
+          {routes.map(({ path, component, key, exact }) => <Route exact={exact} path={path} component={component} key={key} /> )}
         </Switch>
       </Router>
     </Provider>

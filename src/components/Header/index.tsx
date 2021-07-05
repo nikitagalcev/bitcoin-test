@@ -6,13 +6,8 @@ import './styles.css';
 
 
 export const Header: React.FC = () => {
-  const { bitcoinPrice, userUsdBalance, userBtcBalance } = useSelector((state: RootState) => {
-    return {
-      bitcoinPrice: state.bitcoin.btcPrice,
-      userUsdBalance: state.user.usdBalance,
-      userBtcBalance: state.user.bitcoinBalance,
-    }
-  });
+  const { btcPrice } = useSelector((state: RootState) => state.bitcoin);
+  const { usdBalance, bitcoinBalance } = useSelector((state: RootState) => state.user)
   
   return (
     <header className='header'>
@@ -20,10 +15,10 @@ export const Header: React.FC = () => {
         <img className='logo__image' src={logo} alt='Bitcoin' />
         <h1 className='logo__text'>Bitcoin Frenzy</h1>
       </div>
-      <p className='header__btcPrice'>1 bitcoin = {bitcoinPrice} $</p>
+      <p className='header__btcPrice'>1 bitcoin = {btcPrice} $</p>
       <div className='infoBlock'>
-        <p className='infoBlock_text'>{userUsdBalance} $</p>
-        <p className='infoBlock_text'>{userBtcBalance} bitcoins</p>
+        <p className='infoBlock_text'>{usdBalance} $</p>
+        <p className='infoBlock_text'>{bitcoinBalance} bitcoins</p>
       </div>
     </header>
   );
