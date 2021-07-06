@@ -3,7 +3,7 @@ import { RootState } from '../store/rootReducer';
 import { incrementBitcoinPrice, decrementBitcoinPrice } from '../reducers/bitcoin/bitcoin.actions';
 import { userIncreaseBitcoinPrice, userDecreaseBitcoinPrice, userGetError } from '../reducers/user/user.actions';
 import { getCurrentDate } from '../helpers/getCurrentDate';
-import './styles.css';
+import '../styles/pagesStyles.css';
 
 export const Bitcoin: React.FC = () => {
   const dispatch = useDispatch();

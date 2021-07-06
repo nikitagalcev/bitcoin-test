@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { userSellBtc, userGetError } from '../reducers/user/user.actions';
 import { RootState } from '../store/rootReducer';
 import { getCurrentDate } from '../helpers/getCurrentDate';
-import './styles.css';
+import '../styles/pagesStyles.css';
 
 
 export const Sell: React.FC = () => {
@@ -11,15 +11,17 @@ export const Sell: React.FC = () => {
   const { bitcoinBalance } = useSelector((state: RootState) => state.user);
 
   const handleSellBtcClick = () => {
-    bitcoinBalance > 0 ? 
-    dispatch(userSellBtc({
-      btcPrice,
-      historyObj: {
-        date: getCurrentDate(),
-        event: 'Sold 1 Bitcoin',
-      }
-    })) : 
-    dispatch(userGetError('No BTC to sale.'))
+    if (bitcoinBalance > 0) {
+      dispatch(userSellBtc({
+        btcPrice,
+        historyObj: {
+          date: getCurrentDate(),
+          event: 'Sold 1 Bitcoin',
+        }
+      }));
+    } else {
+      dispatch(userGetError('No BTC to sale.'));
+    }
   };
 
   return (

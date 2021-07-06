@@ -16,4 +16,3 @@ This is small “Bitcoin Frenzy” dashboard with 4 sections:
   2. React-Router.
   2. Redux.
   3. Typescript.
-  4. uuid library for generating unique ID's in the lists.

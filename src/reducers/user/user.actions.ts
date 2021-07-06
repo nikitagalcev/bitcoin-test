@@ -9,7 +9,7 @@ import {
   historyObjType
 } from './user.types';
 
-interface UserSellBuyBtc {
+interface IUserSellBuyBtc {
   btcPrice: number,
   historyObj: historyObjType;
 }
@@ -43,14 +43,14 @@ export const userWithdrawUsdBalance = (params: historyObjType) => {
   };
 };
 
-export const userBuyBtc = (params: UserSellBuyBtc) => {
+export const userBuyBtc = (params: IUserSellBuyBtc) => {
   return {
     type: USER_BUY_BTC,
     payload: params
   };
 };
 
-export const userSellBtc = (params: UserSellBuyBtc) => {
+export const userSellBtc = (params: IUserSellBuyBtc) => {
   return {
     type: USER_SELL_BTC,
     payload: params,

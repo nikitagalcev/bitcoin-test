@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store/rootReducer';
 import { userDepositUsdBalance, userWithdrawUsdBalance, userGetError } from '../reducers/user/user.actions';
 import { getCurrentDate } from '../helpers/getCurrentDate';
-import './styles.css';
+import '../styles/pagesStyles.css';
 
 export const Wallet: React.FC = () => {
   const dispatch = useDispatch();

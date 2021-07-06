@@ -1,6 +1,4 @@
-import { 
-  USER_INCREASE_BITCOIN_PRICE, 
-  USER_DECREASE_BITCOIN_PRICE, 
+import {
   USER_DEPOSIT_USD_BALANCE, 
   USER_WITHDRAW_USD_BALANCE, 
   USER_BUY_BTC, 
@@ -11,7 +9,7 @@ import {
 
 
 type UserState = {
-  actionsHistory: {date: string, event: string}[],
+  actionsHistory: {date: Date, event: string}[],
   bitcoinBalance: number,
   usdBalance: number,
   error: string,
@@ -26,53 +24,27 @@ const INITIAL_STATE: UserState = {
 
 const userReducer = (state = INITIAL_STATE, action: UserActionTypes): UserState => {
   switch (action.type) {
-    case USER_INCREASE_BITCOIN_PRICE:
-      return {
-        ...state,
-        actionsHistory: [
-          action.payload,
-          ...state.actionsHistory]
-      }
-    case USER_DECREASE_BITCOIN_PRICE:
-      return {
-        ...state,
-        actionsHistory: [
-          action.payload,
-          ...state.actionsHistory]
-      }
     case USER_DEPOSIT_USD_BALANCE:
       return {
         ...state,
         usdBalance: state.usdBalance += 100,
-        actionsHistory: [
-          action.payload,
-          ...state.actionsHistory]
       }
     case USER_WITHDRAW_USD_BALANCE:
       return {
         ...state,
         usdBalance: state.usdBalance -= 100,
-        actionsHistory: [
-          action.payload,
-          ...state.actionsHistory]
       }
     case USER_BUY_BTC:
       return {
         ...state,
         usdBalance: state.usdBalance - action.payload.btcPrice,
         bitcoinBalance: state.bitcoinBalance += 1,
-        actionsHistory: [
-          action.payload.historyObj,
-          ...state.actionsHistory]
       }
       case USER_SELL_BTC:
         return {
           ...state,
           usdBalance: state.usdBalance + action.payload.btcPrice,
           bitcoinBalance: state.bitcoinBalance -= 1,
-          actionsHistory: [
-            action.payload.historyObj,
-            ...state.actionsHistory]
         }
       case USER_GET_ERROR:
         return {

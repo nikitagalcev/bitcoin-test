@@ -6,30 +6,39 @@ export const USER_BUY_BTC = 'USER_BUY_BTC';
 export const USER_SELL_BTC = 'USER_SELL_BTC';
 export const USER_GET_ERROR = 'USER_GET_ERROR';
 
+export const userHistoryTypesArr = [
+  USER_INCREASE_BITCOIN_PRICE, 
+  USER_DECREASE_BITCOIN_PRICE, 
+  USER_DEPOSIT_USD_BALANCE, 
+  USER_WITHDRAW_USD_BALANCE, 
+  USER_BUY_BTC,
+  USER_SELL_BTC
+]
+
 export type historyObjType = {
-  date: string
+  date: Date,
   event: string,
 }
-export interface userIncreaseBictoinPriceAction {
+export interface IuserIncreaseBictoinPriceAction {
   type: typeof USER_INCREASE_BITCOIN_PRICE;
   payload: historyObjType;
 }
-export interface userDecreaseBictoinPriceAction {
+export interface IuserDecreaseBictoinPriceAction {
   type: typeof USER_DECREASE_BITCOIN_PRICE;
   payload: historyObjType;
 }
 
-export interface userDepositUsdBalanceAction {
+export interface IuserDepositUsdBalanceAction {
   type: typeof USER_DEPOSIT_USD_BALANCE;
   payload: historyObjType;
 }
 
-export interface userWithdrawUsdBalanceAction {
+export interface IuserWithdrawUsdBalanceAction {
   type: typeof USER_WITHDRAW_USD_BALANCE;
   payload: historyObjType;
 }
 
-export interface userBuyBtcAction {
+export interface IuserBuyBtcAction {
   type: typeof USER_BUY_BTC;
   payload: {
     btcPrice: number,
@@ -37,7 +46,7 @@ export interface userBuyBtcAction {
   }
 }
 
-export interface userSellBtcAction {
+export interface IuserSellBtcAction {
   type: typeof USER_SELL_BTC;
   payload: {
     btcPrice: number,
@@ -45,16 +54,16 @@ export interface userSellBtcAction {
   }
 }
 
-export interface userGetErrorAction {
+export interface IuserGetErrorAction {
   type: typeof USER_GET_ERROR;
   payload: string
 }
 
 export type UserActionTypes = 
-  | userIncreaseBictoinPriceAction
-  | userDecreaseBictoinPriceAction
-  | userDepositUsdBalanceAction
-  | userWithdrawUsdBalanceAction
-  | userBuyBtcAction
-  | userSellBtcAction
-  | userGetErrorAction;
+  | IuserIncreaseBictoinPriceAction
+  | IuserDecreaseBictoinPriceAction
+  | IuserDepositUsdBalanceAction
+  | IuserWithdrawUsdBalanceAction
+  | IuserBuyBtcAction
+  | IuserSellBtcAction
+  | IuserGetErrorAction;
