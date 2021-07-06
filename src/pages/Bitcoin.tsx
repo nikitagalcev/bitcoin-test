@@ -25,7 +25,7 @@ export const Bitcoin: React.FC = () => {
         event: 'Decreased Bitcoin Price by 1,000$', 
       }));
     } else {
-      dispatch(userGetError('BTC price is too low for decrease'));
+      dispatch(userGetError('BTC price is too low for decrease.'));
     }
   };
 
